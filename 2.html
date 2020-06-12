@@ -1,1 +1,27 @@
+<body style="padding: 0; margin: 0;">
+<div id="xy" style="width: 100%; height: 100%;" onmousemove="ShowCoordinates()"></div>
+</body>
 
+<script>
+    function ShowCoordinates(){
+        let x, y;
+        x=window.event.clientX;
+        y=window.event.clientY;
+
+        document.getElementById('xy').innerHTML = "x = " + x + ", y = " + y;
+    }
+
+    document.body.children[0].onclick = function(e)
+    {
+        ShowCoordinates();
+
+        document.getElementById('xy').innerHTML += ", LMB click";
+    }
+
+    document.body.children[0].oncontextmenu = function(e)
+    {
+        ShowCoordinates();
+
+        document.getElementById('xy').innerHTML += ", RMB click";
+    }
+</script>
