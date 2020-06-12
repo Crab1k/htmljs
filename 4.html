@@ -1,1 +1,94 @@
+<body>
+    <div class="maindiv">
+        <div class="tab">
+            <input type="button" value="HTML" class="tablinks" onclick="openTab(event, 'HTML')">
+            <input type="button" value="CSS" class="tablinks" onclick="openTab(event, 'CSS')">
+            <input type="button" value="JS" class="tablinks" onclick="openTab(event, 'JS')">
+        </div>
 
+        <div>
+        <div id="HTML" class="tabcontent">
+            <h3>HTML</h3>
+            <p>HTML (HyperText Markup Language — «язык гипертекстовой разметки») — самый базовый строительный блок Веба. Он определяет содержание и структуру веб-контента. Другие технологии, помимо HTML, обычно используются для описания внешнего вида/представления (CSS) или функциональности/поведения (JavaScript) веб-страницы.</p>
+          </div>
+          
+          <div id="CSS" class="tabcontent">
+            <h3>CSS</h3>
+            <p>CSS (Cascading Style Sheets — каскадные таблицы стилей) — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.
+
+                Преимущественно используется как средство описания, оформления внешнего вида веб-страниц, написанных с помощью языков разметки HTML и XHTML, но может также применяться к любым XML-документам, например, к SVG или XUL.</p>
+          </div>
+          
+          <div id="JS" class="tabcontent">
+            <h3>JS</h3>
+            <p>JavaScript (/ˈdʒɑːvɑːˌskrɪpt/; аббр. JS /ˈdʒeɪ.ɛs./) — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и функциональный стили. Является реализацией стандарта ECMAScript (стандарт ECMA-262[6]).
+
+                JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам[7].</p>
+          </div>
+          </div>
+    </div>
+
+</body>
+
+<style>
+    .maindiv{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #3a38be;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    margin: auto;
+    }
+
+    .tablinks {
+    background-color: inherit;
+    color: aliceblue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin: auto;
+    margin-left: 0;
+    transition: 0.3s;
+    }
+
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin: auto;
+    }
+
+</style>
+
+
+<script>
+    function openTab(evt, Name) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(Name).style.display = "inline-block";
+    evt.currentTarget.className += " active";
+}
+</script>
