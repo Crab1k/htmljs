@@ -1,1 +1,30 @@
+<body>
+    <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+    <input type="button" value="Add 5%" onclick="Add5()">
+</body>
 
+
+<style>
+    #myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: green;
+}
+</style>
+
+
+<script>
+    function Add5(){
+        if (document.getElementById('myBar').style.width == "100%") return;
+
+        let w = Number(document.getElementById('myBar').style.width.replace('%', '')) + 5;
+        document.getElementById('myBar').style.width = w + '%';
+    }
+</script>
